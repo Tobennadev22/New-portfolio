@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./styles/Global.css";
 import Home from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
 import NavMenu from "./components/NavMenu";
 import Project1 from "./pages/Project1";
+import { Box } from "@chakra-ui/react";
 
 function App() {
   return (
-    <div>
+    <Box>
       <Router>
         <NavMenu />
         <Routes>
@@ -15,7 +17,7 @@ function App() {
           <Route path="/project1" element={<Project1 />}></Route>
         </Routes>
       </Router>
-    </div>
+    </Box>
   );
 }
 

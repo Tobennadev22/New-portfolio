@@ -9,12 +9,13 @@ import {
 // import myImage from "../assets/bg-toby.png";
 // import { Wave } from "../icons/hands.png";
 import myImage from "../assets/thought.png";
+import { Link } from "react-router-dom";
 
 // Main Header component
 function Header() {
   return (
     <Box mb={["16px", "16px", "28px"]} as="section" px={10} pt="48px">
-      <Flex direction={["column", "column", "row"]} spacing="20px" mx={"auto"}>
+      <Flex direction={["column", "column", "row"]} spacing="20px">
         {/* Main content box with background image */}
         <Box
           h={[800, 500, 600]}
@@ -27,6 +28,7 @@ function Header() {
           backgroundSize="cover"
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
+          mx="auto"
           marginRight="20px"
         >
           <Box textAlign={["center", "center", "left"]} px="24px">
@@ -34,7 +36,7 @@ function Header() {
               fontWeight={["medium", "medium", "semibold"]}
               fontSize={["3xl", "3xl", "5xl"]}
               pb={10}
-              color="brandBlue.900"
+              color="gray.600"
             >
               Hey! I'm Tobe, a product designer with 3+ years of professional
               experience.
@@ -53,16 +55,21 @@ function Header() {
               solutions that help businesses achieve good ROI.
             </Text>
             <Box mt="48px">
-              <Button
-                _hover={{
-                  bg: useColorModeValue("gray.800", "gray.700"),
-                  color: "gray.50",
-                }}
-                bgColor="gray.700"
-                color="gray.200"
-              >
-                Let's Talk
-              </Button>
+              <Link>
+                <Button
+                  href={
+                    "https://www.linkedin.com/in/ekwealor-tobechukwu-100113114/"
+                  }
+                  _hover={{
+                    bg: useColorModeValue("gray.800", "gray.700"),
+                    color: "gray.50",
+                  }}
+                  bgColor="gray.700"
+                  color="gray.200"
+                >
+                  Let's have a chat
+                </Button>
+              </Link>
             </Box>
           </Box>
         </Box>
@@ -82,12 +89,14 @@ function ImageSection() {
       px={["16px", "16px"]}
       w={["100%", "100%", 800]}
       display={["none", "none", "block"]}
-      bg="brandblue.200"
+      // bg="brandblue.200"
+      bg="#fbfbfa"
       borderRadius={20}
       backgroundImage={`url(${myImage})`}
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
+      // className="ekit-fancy-text-animated"
     >
       {/* Additional content can be added here */}
     </Box>

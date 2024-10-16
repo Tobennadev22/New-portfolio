@@ -1,6 +1,7 @@
 import { Link as ReactRouterLink } from "react-router-dom";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
+import Logo from "../assets/tobymileslogo.png";
 import "../styles/Global.css";
 import {
   Box,
@@ -12,7 +13,6 @@ import {
   HStack,
   useColorModeValue,
   CloseButton,
-  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -36,7 +36,19 @@ export default function NavMenu() {
 
   return (
     <>
-      <Box bg={useColorModeValue("black.900")} px={10}>
+      <Box
+        // bg={useColorModeValue("black.900")}
+        // px={20}
+        bg="#fff"
+        position="sticky"
+        top="0"
+        zIndex="1000"
+        p={2}
+        px={10}
+        boxShadow="md"
+        blur={10}
+        opacity={[0.9]}
+      >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -48,7 +60,7 @@ export default function NavMenu() {
 
           <Flex direction={["column", "column", "row"]}>
             <ChakraLink as={ReactRouterLink} to="/" textDecoration="none">
-              <Text>Tobs-Designs</Text>
+              <img src={Logo} alt="Tobenna's Logo" width="120px" />
             </ChakraLink>
           </Flex>
           <HStack spacing={8} alignItems={"center"}>
@@ -132,6 +144,9 @@ export default function NavMenu() {
                 smooth="true"
                 duration={500}
                 cursor="pointer"
+                px={2}
+                py={1}
+                rounded={"md"}
               >
                 Projects
               </ChakraLink>
