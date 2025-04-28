@@ -1,10 +1,11 @@
 import { Link as ReactRouterLink } from "react-router-dom";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
-import Logo from "../assets/tobymileslogo.png";
+// import Logo from "../assets/tobymileslogo.png";
 import "../styles/Global.css";
 import {
   Box,
+  Container,
   Flex,
   Link,
   useDisclosure,
@@ -13,6 +14,7 @@ import {
   HStack,
   useColorModeValue,
   CloseButton,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -35,23 +37,29 @@ export default function NavMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <>
-      <Box
-        // bg={useColorModeValue("black.900")}
-        // px={20}
-        bg="#fff"
-        position="sticky"
-        top="0"
-        zIndex="1000"
-        p={2}
-        px={10}
-        boxShadow="md"
-        blur={10}
-        opacity={[0.9]}
-      >
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+    <Box
+      // bg={useColorModeValue("black.900")}
+      // px={20}
+      bg="#fff"
+      position="sticky"
+      top="0"
+      zIndex="1000"
+      p={2}
+      px={10}
+      boxShadow="md"
+      blur={10}
+      opacity={[0.9]}
+    >
+      <Container maxW={["container.sm", "container.xl"]}>
+        <Flex
+          h={16}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          color="gray.600"
+        >
           <IconButton
-            size={"md"}
+            // px={10}
+            size={"sm"}
             icon={isOpen ? <CloseButton /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
@@ -60,19 +68,25 @@ export default function NavMenu() {
 
           <Flex direction={["column", "column", "row"]}>
             <ChakraLink as={ReactRouterLink} to="/" textDecoration="none">
-              <img src={Logo} alt="Tobenna's Logo" width="120px" />
+              {/* <img src={Logo} alt="Tobenna's Logo" width="120px" /> */}
+              <Text fontWeight={[700]}>Tobenna Miles</Text>
             </ChakraLink>
           </Flex>
           <HStack spacing={8} alignItems={"center"}>
             <HStack
               as={"nav"}
               spacing={4}
-              display={{ base: "none", md: "flex" }}
-              fontWeight={[600]}
+              display={{ base: "none", sm: "flex" }}
+              fontWeight={[500]}
             >
               <ChakraLink
                 as={ReactRouterLink}
                 to="/"
+                _activeLink={{
+                  bg: "primaryColor.400",
+                  color: "gray.900",
+                  fontWeight: "medium",
+                }}
                 _hover={{
                   textDecoration: "none",
                   bg: useColorModeValue("primaryColor.400", "gray.900"),
@@ -98,7 +112,7 @@ export default function NavMenu() {
               </ChakraLink>
               <ChakraLink
                 as={ScrollLink}
-                to="project-section"
+                to="#"
                 smooth="true"
                 duration={800}
                 cursor="pointer"
@@ -110,7 +124,7 @@ export default function NavMenu() {
                 py={1}
                 rounded={"md"}
               >
-                Projects
+                My Resume
               </ChakraLink>
               <NavLink>Contact</NavLink>
             </HStack>
@@ -154,7 +168,7 @@ export default function NavMenu() {
             </Stack>
           </Box>
         ) : null}
-      </Box>
-    </>
+      </Container>
+    </Box>
   );
 }

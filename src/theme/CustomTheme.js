@@ -30,8 +30,8 @@ const CustomTheme = extendTheme({
     },
   },
   fonts: {
-    heading: "Quicksand",
-    body: "Quicksand",
+    heading: "Graphik",
+    body: "inter",
   },
 });
 

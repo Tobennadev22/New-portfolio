@@ -3,54 +3,85 @@ import {
   Text,
   Heading,
   Button,
+  Container,
   useColorModeValue,
   Flex,
 } from "@chakra-ui/react";
-import myImage from "../assets/bg-toby.png";
+import SkillBadge from "./Skillbadge";
+// import myImage from "../assets/bg-toby.png";
+
+const skills = [
+  "UI Design",
+  "UX Research",
+  "User Testing",
+  "Wireframing",
+  "Prototyping",
+  "Visual Design",
+  "Information Architecture",
+  "Design Systems",
+  "Web Design",
+  "Mobile Design",
+  "HTML",
+  "CSS",
+  "REACT",
+];
 
 // Main Header component
 function About() {
   return (
-    <Box mb={["16px", "16px", "28px"]} as="section" px={10} pt="48px">
+    <Container as="section" py="48px" maxWidth={["sm", "md", "1200px"]}>
       <Flex direction={["column", "column", "row"]} spacing="20px" mx={"auto"}>
         {/* Main content box with background image */}
         <Box
-          h={[800, 500, 600]}
-          pt={["32px", "32px", "54px"]}
-          px={["16px", "16px", "40px"]}
-          w={["100%", "100%", "100%"]}
+          // h={[800, 500, 600]}
+          py={["32px", "32px", "54px"]}
+          // px={["16px", "16px", "40px"]}
+          // w={["100%", "100%", "100%"]}
           bg="gray.100"
           borderRadius={20}
-          backgroundImage={`url(${myImage})`}
+          // backgroundImage={`url(${myImage})`}
+          backgroundColor="#f9f9f9"
           backgroundSize="cover"
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
-          marginRight="20px"
+          // marginRight="20px"
         >
           <Box textAlign={["center", "center", "left"]} px="24px">
             <Heading
-              fontWeight={["medium", "medium", "semibold"]}
-              fontSize={["3xl", "3xl", "5xl"]}
+              fontWeight={["medium", "medium", "medium"]}
+              fontSize={["3xl", "3xl", "4xl"]}
               pb={10}
-              color="brandBlue.900"
+              color="gray.600"
             >
-              Get to know me <span>emoji</span>
+              Get to know me <span>😎</span>
             </Heading>
-            <Box fontSize={["md", "md", "lg"]}>
+            <Box fontSize={["sm", "md", "md"]}>
               <Text
-                fontWeight="medium"
+                fontWeight="sm"
                 // fontSize={["sm", "md", "md"]}
                 w={["100%", "100%", "100%"]}
                 pt="2"
                 color={["gray.500"]}
                 textAlign={["center", "center", "left"]}
+                lineHeight={["24px"]}
               >
-                My name is Tobechukwu, and I am a user experience designer. I
-                have always been fascinated by the impact design has on human
-                and day to day lives.
+                I'm Ekwealor Tobechukwu, a UI/UX Designer passionate about
+                creating intuitive, user-centered digital experiences. With over
+                4 years of experience, I specialize in turning complex ideas
+                into beautiful, functional interfaces across web and mobile
+                platforms. I believe great design is a balance between
+                aesthetics, functionality, and empathy. My approach always
+                starts with understanding the user's needs and business goals to
+                create impactful solutions. I'm highly skilled in tools like
+                Figma, Adobe Illustrator, Photoshop, and also have a strong
+                foundation in HTML and CSS, which helps me design with
+                developers in mind. When I’m not designing, you’ll find me
+                watching a football game, exploring new tech trends, sketching
+                ideas, mentoring young designers or collaborating with creative
+                communities.
               </Text>
-              <Text
-                fontWeight="medium"
+              {/* <Text
+                fontWeight="sm"
                 // fontSize={["sm", "md", "md"]}
                 w={["100%", "100%", "100%"]}
                 pt="2"
@@ -68,9 +99,9 @@ function About() {
                 interfaces that have increased efficiencies and improved
                 companies' revenue. I am constantly improving my skill because I
                 believe in the say "Learning never stops".
-              </Text>
-              <Text
-                fontWeight="medium"
+              </Text> */}
+              {/* <Text
+                fontWeight="sm"
                 // fontSize={["sm", "md", "md"]}
                 w={["100%", "100%", "100%"]}
                 pt="2"
@@ -80,7 +111,7 @@ function About() {
                 When I’m not designing, you can find me watching a football
                 game, mentoring young designers, or streaming useful videos on
                 youtube. I am based in the industrious city of Lagos, Nigeria.
-              </Text>
+              </Text> */}
             </Box>
             <Box mt="48px">
               <Button
@@ -91,14 +122,42 @@ function About() {
                 bgColor="gray.700"
                 color="gray.200"
               >
-                Let's Talk
+                Let’s build something amazing together.
               </Button>
             </Box>
           </Box>
         </Box>
         {/* Placeholder for additional content */}
+
         {/* <ImageSection /> */}
       </Flex>
+      <MySkills />
+    </Container>
+  );
+}
+
+function MySkills() {
+  return (
+    <Box>
+      <Heading
+        fontWeight={["medium", "medium", "medium"]}
+        fontSize={["2xl", "3xl", "3xl"]}
+        py={10}
+        color="gray.600"
+      >
+        My Skill Set
+      </Heading>
+      <Box>
+        <Flex direction={["row"]} gap={4} wrap="wrap">
+          {skills.map((skill, index) => (
+            <SkillBadge
+              key={index}
+              name={skill}
+              className={`opacity-0 animate-slide-up delay-${index * 100}`}
+            />
+          ))}
+        </Flex>
+      </Box>
     </Box>
   );
 }

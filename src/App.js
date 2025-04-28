@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
 import NavMenu from "./components/NavMenu";
 import Project1 from "./pages/Project1";
+import Project2 from "./pages/Project2";
 import { Box } from "@chakra-ui/react";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<AboutMe />}></Route>
           <Route path="/project1" element={<Project1 />}></Route>
+          <Route path="/project2" element={<Project2 />}></Route>
         </Routes>
       </Router>
     </Box>
