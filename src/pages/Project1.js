@@ -24,7 +24,7 @@ import team from "../icons/team-Icon.png";
 import Disclaimer from "../icons/Disclamier-Icon.png";
 import product from "../icons/product-Icon.png";
 import role from "../icons/role-Icon.png";
-import lady from "../assets/ladyonphone.png";
+import ukUsers from "../assets/allukusers.png";
 import arrow from "../icons/icegif-715.gif";
 import RevealOnScrollFadeDown from "../util/RevealOnScrollFadeDown";
 import RevealOnScrollFadeRight from "../util/RevealOnStrollFadeRight";
@@ -430,7 +430,7 @@ function WalkThrough() {
                 </Heading>
               </Box>
               <Box>
-                <Text>
+                <Text pb={["24px", "24px", "48px"]}>
                   Nigerians in the UK often need to send money to friends and
                   family in Nigeria. Traditional remittance options can be
                   costly, slow, and complicated. There is a need for a
@@ -440,8 +440,8 @@ function WalkThrough() {
               </Box>
             </RevealOnScrollFadeDown>
           </Box>
-          <Box>
-            <img src={lady} alt="problem" width={["50%"]} />
+          <Box className="alluserimg">
+            <img src={ukUsers} alt="problem" width={["70%"]} />
           </Box>
         </Box>
         <Box mt={["64px"]}>

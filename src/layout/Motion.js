@@ -5,7 +5,7 @@ import myImage from "../assets/bg-toby.png";
 
 const steps = [
   "Oh! I forgot to mention to you",
-  "Something I don't want to keep as a secret",
+  "Something I don't want to keep as a secret🔐",
   "I know you want to know",
   "I wrote my portfolio with react. My first frontend project😊",
 ];
@@ -70,7 +70,7 @@ export default function StickyScroller() {
                 textAlign: "center",
               }}
             >
-              <Text fontSize="4xl" fontWeight="bold">
+              <Text fontSize="5xl" fontWeight="Semibold">
                 {step}
               </Text>
             </motion.div>
